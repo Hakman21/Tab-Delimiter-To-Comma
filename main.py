@@ -1,6 +1,3 @@
-import winsound
-import time
-
 open("data.txt", "a").close()
 
 def replace():
@@ -9,24 +6,15 @@ def replace():
         for line in fin:
             fout.write(line.replace('\t', ','))
 
-def start(password):
-
-    auth = input("Enter password: ")
-
-    if auth == password:
-        view = replace()
-    elif auth != password:
-        print("Erasing data...")
-        time.sleep(1)
-        print("Locking account...")
-        time.sleep(1)
-        print("Contacting authorities...")
-        time.sleep(3)
-        print("Authorities contacted...")
-        time.sleep(2)
-        print("The police are on their way...")
-        while True:
-            winsound.Beep(14000, 3000)
-
-password = "a"
-ball = start(password)
+hello = True
+while hello == True:
+            
+    start = input("Start? y/n: ")
+    
+    if start == "y":
+        hola = replace()
+        hello = False
+    elif start == "n":
+        hello = False
+    else:
+        print(f"Invalid Input, please try again. ")
